@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --primary: 349 59% 30%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 38 71% 70%;
+    --accent-foreground: 349 59% 18%;
+    --brand-soft: 39 67% 89%;
+    --background: 0 0% 98%;
+    --foreground: 0 0% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 3.9%;
+    --secondary: 39 67% 89%;
+    --secondary-foreground: 349 59% 18%;
+    --muted: 240 5% 96%;
+    --muted-foreground: 240 4% 46%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 71% 45%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 10%;
+    --border: 240 6% 90%;
+    --input: 240 6% 90%;
+    --ring: 349 59% 30%;
+    --radius: 0.5rem;
+    --chart-1: 349 59% 30%;
+    --chart-2: 38 71% 70%;
+    --chart-3: 142 71% 45%;
+    --chart-4: 197 37% 40%;
+    --chart-5: 27 87% 55%;
+  }
+  .dark {
+    --primary: 349 59% 40%;
+    --primary-foreground: 0 0% 100%;
+    --accent: 38 71% 60%;
+    --accent-foreground: 0 0% 10%;
+    --brand-soft: 39 30% 15%;
+    --background: 0 0% 5%;
+    --foreground: 0 0% 95%;
+    --card: 0 0% 8%;
+    --card-foreground: 0 0% 95%;
+    --popover: 0 0% 8%;
+    --popover-foreground: 0 0% 95%;
+    --secondary: 240 4% 15%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 4% 15%;
+    --muted-foreground: 240 5% 65%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 60% 40%;
+    --success-foreground: 0 0% 100%;
+    --warning: 38 80% 45%;
+    --warning-foreground: 0 0% 10%;
+    --border: 240 4% 15%;
+    --input: 240 4% 15%;
+    --ring: 349 59% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  .bg-brand-soft {
+    background-color: hsl(var(--brand-soft));
+  }
+  .text-balance {
+    text-wrap: balance;
+  }
+  .pb-safe {
+    padding-bottom: max(1.5rem, env(safe-area-inset-bottom));
+  }
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
